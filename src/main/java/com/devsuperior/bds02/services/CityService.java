@@ -33,6 +33,9 @@ public class CityService {
 		city.setName(cityDTO.getName());
 		return new CityDTO(cityRepository.save(city));
 	}
+		
 	
-	
+	public void delete(Long id) {
+		cityRepository.deleteById(id);
+	}
 }
