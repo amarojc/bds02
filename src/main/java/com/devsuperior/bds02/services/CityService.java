@@ -26,4 +26,13 @@ public class CityService {
 				.map(city -> new CityDTO(city))
 				.collect(Collectors.toList());
 	}
+	
+	@Transactional
+	public CityDTO insert(CityDTO cityDTO) {
+		City city = new City();
+		city.setName(cityDTO.getName());
+		return new CityDTO(cityRepository.save(city));
+	}
+	
+	
 }
